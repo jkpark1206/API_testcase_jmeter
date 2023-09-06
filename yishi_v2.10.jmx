@@ -20819,13 +20819,13 @@ out.close();
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识(基准测试)" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识(基准测试)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">25</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">3600</stringProp>
@@ -20837,7 +20837,7 @@ out.close();
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">192.168.5.242</stringProp>
+          <stringProp name="HTTPSampler.domain">192.168.1.208</stringProp>
           <stringProp name="HTTPSampler.port">8011</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -20856,13 +20856,13 @@ out.close();
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie管理器" enabled="true">
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie管理器" enabled="false">
           <collectionProp name="CookieManager.cookies"/>
           <boolProp name="CookieManager.clearEachIteration">false</boolProp>
           <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
         </CookieManager>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="测试固件CSV " enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="测试固件CSV " enabled="false">
           <stringProp name="filename">C:/Users/Administrator/Desktop/gujianhuizong/jizhunceshi.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">firmware_name,test_firmware,test_md5</stringProp>
@@ -20874,7 +20874,7 @@ out.close();
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="临界部分控制器" enabled="true">
+        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="临界部分控制器" enabled="false">
           <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
         </CriticalSectionController>
         <hashTree/>
@@ -20936,7 +20936,7 @@ out.close();
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建扫描任务" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建扫描任务" enabled="false">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
               <elementProp name="${test_firmware}" elementType="HTTPFileArg">
@@ -21026,7 +21026,7 @@ out.close();
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有列表" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有列表" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -21066,7 +21066,7 @@ out.close();
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="开始扫描任务" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="开始扫描任务" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -23872,7 +23872,7 @@ out.close();
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识线程组" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识线程组" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -25265,7 +25265,7 @@ out.close();
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器_创建固件分析任务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器_创建固件分析任务" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -25353,11 +25353,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -25444,11 +25444,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -25535,11 +25535,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：&quot;缺少task_name 参数&quot;" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;缺少task_name 参数&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">缺少task_name 参数</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -25632,11 +25632,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -25729,11 +25729,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -25826,11 +25826,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -25923,11 +25923,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：task_name参数长度超过100限制" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;task_name参数长度超过100限制&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">task_name参数长度超过100限制</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26020,11 +26020,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26117,11 +26117,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26214,11 +26214,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26311,11 +26311,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26408,11 +26408,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：version参数长度超过100限制" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;version参数长度超过100限制&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">version参数长度超过100限制</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26505,11 +26505,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：缺少version 参数" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;缺少version 参数&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">缺少version 参数</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26602,11 +26602,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：缺少vendor 参数" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;缺少vendor 参数&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">缺少vendor 参数</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26699,11 +26699,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26796,11 +26796,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26893,11 +26893,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -26990,11 +26990,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：vendor参数长度超过100限制" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;vendor参数长度超过100限制&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">vendor参数长度超过100限制</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27087,11 +27087,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27184,11 +27184,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27281,11 +27281,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：缺少device_name 参数" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;缺少device_name 参数&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">缺少device_name 参数</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27378,11 +27378,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：file_md5参数内容不符合要求" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;file_md5参数内容不符合要求&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">file_md5参数内容不符合要求</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27475,11 +27475,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：file_md5参数内容为空" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;file_md5参数内容为空&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">file_md5参数内容为空</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27570,11 +27570,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：缺少固件" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;缺少固件&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">缺少固件</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27764,11 +27764,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27861,11 +27861,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -27958,11 +27958,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -28055,11 +28055,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -28152,15 +28152,15 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建固件扫描任务_38_只勾选cve_lookup插件-关联" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建固件扫描任务_38_只勾选cve_lookup插件-不关联soft插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
                 <elementProp name="${firmware_name}" elementType="HTTPFileArg">
@@ -28346,11 +28346,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -28443,11 +28443,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -28540,11 +28540,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -28734,11 +28734,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -28831,11 +28831,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -28928,11 +28928,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -29025,11 +29025,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -29122,11 +29122,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -29219,11 +29219,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -29316,11 +29316,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -29413,11 +29413,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：缺少 plugin 参数" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;缺少 plugin 参数&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">缺少 plugin 参数</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -29511,11 +29511,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;OK&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="提取扫描任务id" enabled="true">
@@ -29621,11 +29621,11 @@ out.close();
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：当前所选插件不完整" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">&quot;当前所选插件不完整&quot;</stringProp>
+              <stringProp name="EXPECTED_VALUE">当前所选插件不完整</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
@@ -29729,11 +29729,11 @@ out.close();
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建固件扫描任务_60_勾选cve_lookup及homology插件，不勾选software_components(暂未接入)" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建固件扫描任务_60_勾选cve_lookup及homology插件，不勾选software_components(暂未接入)" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
                 <elementProp name="${firmware_name}" elementType="HTTPFileArg">
@@ -29804,33 +29804,26 @@ out.close();
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="提取扫描任务id" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">task_id</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="1537216">2002</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：插件cve_lookup缺少依赖software_components" enabled="true">
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：plugin不正确或超出范围" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">插件cve_lookup缺少依赖[&apos;software_components&apos;, &apos;homology&apos;]</stringProp>
+              <stringProp name="EXPECTED_VALUE">plugin不正确或超出范围</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应code为6003" enabled="true">
+              <stringProp name="JSON_PATH">$.code</stringProp>
+              <stringProp name="EXPECTED_VALUE">6003</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建固件扫描任务_61_只勾选homology插件(暂未接入)" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建固件扫描任务_61_只勾选homology插件(暂未接入)" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
                 <elementProp name="${firmware_name}" elementType="HTTPFileArg">
@@ -29901,38 +29894,31 @@ out.close();
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="提取扫描任务id" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">task_id</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="1537216">2002</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：插件cve_lookup缺少依赖software_components" enabled="true">
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应message为：plugin不正确或超出范围" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">插件cve_lookup缺少依赖[&apos;software_components&apos;, &apos;homology&apos;]</stringProp>
+              <stringProp name="EXPECTED_VALUE">plugin不正确或超出范围</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言_响应code为6003" enabled="true">
+              <stringProp name="JSON_PATH">$.code</stringProp>
+              <stringProp name="EXPECTED_VALUE">6003</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="创建固件扫描任务_62_创建固件库任务2(全选插件_关联固件库)" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\dsp.ko" elementType="HTTPFileArg">
+                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\libcurl_7.17.1-1_arm.ipk" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\dsp.ko</stringProp>
+                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\libcurl_7.17.1-1_arm.ipk</stringProp>
                   <stringProp name="File.paramname">firmware</stringProp>
                 </elementProp>
               </collectionProp>
@@ -29976,7 +29962,7 @@ out.close();
                 </elementProp>
                 <elementProp name="file_md5" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">${md5}</stringProp>
+                  <stringProp name="Argument.value">ddc56d45ea7fc06a2684f589dadb4d28</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">file_md5</stringProp>
@@ -30037,7 +30023,7 @@ out.close();
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器-前提-开始7个任务" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器-前提-开始7个任务" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
@@ -30444,7 +30430,7 @@ out.close();
               <hashTree/>
             </hashTree>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test01_成功获取所有任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test01_成功获取所有任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="page" elementType="HTTPArgument">
@@ -30539,7 +30525,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test02_获取初始状态任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test02_获取初始状态任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="task_status_list" elementType="HTTPArgument">
@@ -30609,7 +30595,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test03_获取队列中状态任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test03_获取队列中状态任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="task_status_list" elementType="HTTPArgument">
@@ -30667,7 +30653,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test04_获取运行中状态任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test04_获取运行中状态任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="task_status_list" elementType="HTTPArgument">
@@ -30819,7 +30805,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test06_获取不可用状态任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test06_获取不可用状态任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="task_status_list" elementType="HTTPArgument">
@@ -30877,7 +30863,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test07_获取暂停状态任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test07_获取暂停状态任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="task_status_list" elementType="HTTPArgument">
@@ -30935,7 +30921,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test08_获取无任务时间的任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test08_获取无任务时间的任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="page" elementType="HTTPArgument">
@@ -31039,7 +31025,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test9_日期为空" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test9_日期为空" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="page" elementType="HTTPArgument">
@@ -31134,7 +31120,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test10_输入厂商关键字获取任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test10_输入厂商关键字获取任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="page" elementType="HTTPArgument">
@@ -31229,7 +31215,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test11_输入不存在的厂商关键字获取任务列表" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test11_输入不存在的厂商关键字获取任务列表" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="page" elementType="HTTPArgument">
@@ -31333,7 +31319,7 @@ out.close();
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test12_任务起始日期大于结束日期" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取所有任务列表_test12_任务起始日期大于结束日期" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="page" elementType="HTTPArgument">
@@ -32321,7 +32307,7 @@ out.close();
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器_开始扫描任务" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器_开始扫描任务" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -32871,7 +32857,7 @@ out.close();
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器-获取所有关联固件库项目列表" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器-获取所有关联固件库项目列表" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -39645,9 +39631,9 @@ out.close();
               <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
-            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-message为：CWE参数参数是必需参数" enabled="true">
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-message为：CWE名称参数是必需参数" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">CWE参数参数是必需参数</stringProp>
+              <stringProp name="EXPECTED_VALUE">CWE名称参数是必需参数</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
@@ -39831,9 +39817,9 @@ out.close();
               <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
-            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-message为：None参数是必需参数" enabled="true">
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-message为：CVE的ID参数是必需参数" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
-              <stringProp name="EXPECTED_VALUE">None参数是必需参数</stringProp>
+              <stringProp name="EXPECTED_VALUE">CVE的ID参数是必需参数</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
