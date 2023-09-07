@@ -20819,7 +20819,7 @@ out.close();
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识(基准测试)" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识(基准测试)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -20837,7 +20837,7 @@ out.close();
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">192.168.1.208</stringProp>
+          <stringProp name="HTTPSampler.domain">192.168.5.242</stringProp>
           <stringProp name="HTTPSampler.port">8011</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -20863,7 +20863,7 @@ out.close();
         </CookieManager>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="测试固件CSV " enabled="true">
-          <stringProp name="filename">C:/Users/Administrator/Desktop/gujianhuizong/jizhunceshi.csv</stringProp>
+          <stringProp name="filename">C:/Users/anban/Desktop/gujianhuizong/jizhunceshi.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">firmware_name,test_firmware,test_md5</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
@@ -20886,8 +20886,8 @@ out.close();
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
 	&quot;username&quot;:&quot;wwh&quot;,&#xd;
-	&quot;password&quot;:&quot;126cfbcd4d16ae6d25c9bfcae76d8ee4&quot;,&#xd;
-     &quot;anban_password&quot;:&quot;6b5c557da96612408d2844af0d9f5e5d&quot;&#xd;
+	&quot;password&quot;:&quot;fcea920f7412b5da7be0cf42b8c93759&quot;,&#xd;
+     &quot;anban_password&quot;:&quot;f169d2236b9ba09a2ceb8a5c03581d41&quot;&#xd;
 	}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -21084,7 +21084,7 @@ out.close();
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
           <stringProp name="HTTPSampler.path">/api/task/start</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -24149,7 +24149,7 @@ out.close();
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识线程组" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="易识线程组" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
