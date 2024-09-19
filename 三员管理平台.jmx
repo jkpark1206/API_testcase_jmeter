@@ -17077,13 +17077,13 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="false">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">C:/Users/anban/Desktop/user_passwd.csv</stringProp>
+          <stringProp name="filename">C:/Users/anban/Desktop/ys_user.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">account,id,passwd</stringProp>
+          <stringProp name="variableNames">account,passwd</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="前置条件_登录" enabled="true">
@@ -17162,15 +17162,15 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-  &quot;account&quot;: &quot;汽车&quot;,&#xd;
+  &quot;account&quot;: &quot;smyltest&quot;,&#xd;
   &quot;email&quot;: &quot;&quot;,&#xd;
-  &quot;groupIds&quot;: [&quot;1707297456576876546&quot;],&#xd;
-  &quot;jobNumber&quot;:&quot;汽车&quot;,&#xd;
+  &quot;groupIds&quot;: [&quot;1769670339017150466&quot;],&#xd;
+  &quot;jobNumber&quot;:&quot;smyl&quot;,&#xd;
   &quot;expireAt&quot;:&quot;&quot;,&#xd;
-  &quot;password&quot;: &quot;52928da58225d4bd9f141874c1332439&quot;,&#xd;
+  &quot;password&quot;: &quot;c62305f4583950426baf4b9bc1a2b87a&quot;,&#xd;
   &quot;passwordFlag&quot;: 1,&#xd;
   &quot;phone&quot;: &quot;&quot;,&#xd;
-  &quot;username&quot;: &quot;汽车&quot;&#xd;
+  &quot;username&quot;: &quot;smyl&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>

@@ -30,7 +30,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">192.168.5.3</stringProp>
+          <stringProp name="HTTPSampler.domain">192.168.5.56</stringProp>
           <stringProp name="HTTPSampler.port">9051</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
@@ -49,6 +49,30 @@
           </collectionProp>
         </HeaderManager>
         <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置-uefi测试固件" enabled="true">
+          <stringProp name="filename">C:/Users/anban/Desktop/gujianhuizong/uefi_firmware.csv</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="variableNames">firmware_path</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件-固件路径" enabled="true">
+          <stringProp name="filename">C:/Users/anban/Desktop/gujianhuizong/changhong_firmlist.csv</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="variableNames">firmware</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="推送二进制文件检测任务到安般平台" enabled="false">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
@@ -57,9 +81,9 @@
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test01-成功创建任务-全勾选插件，任务名为单个字母" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\a" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\a</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -83,7 +107,7 @@
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
             <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
@@ -93,7 +117,7 @@
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-code为200" enabled="true">
               <stringProp name="JSON_PATH">$.code</stringProp>
               <stringProp name="EXPECTED_VALUE">200</stringProp>
-              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
               <boolProp name="ISREGEX">true</boolProp>
@@ -102,19 +126,25 @@
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-message为OK" enabled="true">
               <stringProp name="JSON_PATH">$.message</stringProp>
               <stringProp name="EXPECTED_VALUE">OK</stringProp>
-              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
               <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器-提取任务id" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">task_id</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test02-无&quot;software_components&quot;插件-CVE与soft插件关联性" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test02-无&quot;software_components&quot;插件-CVE与soft插件关联性" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -164,7 +194,7 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test03-上传文件为空" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test03-上传文件为空" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="CheckOption" elementType="HTTPArgument">
@@ -210,12 +240,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test04-CheckOption为空" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test04-CheckOption为空" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -265,12 +295,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test05-只勾选&quot;software_components&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test05-只勾选&quot;software_components&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -326,12 +356,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test06-只勾选&quot;cve_lookup&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test06-只勾选&quot;cve_lookup&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -387,12 +417,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test07-只勾选&quot;crypto_hints&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test07-只勾选&quot;crypto_hints&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -448,12 +478,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test08-只勾选&quot;elf_analysis&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test08-只勾选&quot;elf_analysis&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -509,12 +539,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test09-只勾选&quot;ip_and_uri_finder&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test09-只勾选&quot;ip_and_uri_finder&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -570,12 +600,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test10-只勾选&quot;users_and_passwords&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test10-只勾选&quot;users_and_passwords&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -631,12 +661,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test11-只勾选&quot;elf_checksec&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test11-只勾选&quot;elf_checksec&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -692,12 +722,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test12-只勾选&quot;cwe_checker&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test12-只勾选&quot;cwe_checker&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -747,12 +777,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test13-上传文件名为99个字符" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test13-上传文件名为99个字符" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发12345678901234567890123456789099个字符.zip" elementType="HTTPFileArg">
+                <elementProp name="C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发12345678901234567890123456789099个字符.zip" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发12345678901234567890123456789099个字符.zip</stringProp>
+                  <stringProp name="File.path">C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发12345678901234567890123456789099个字符.zip</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -808,12 +838,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test14-上传文件名超过99个字符" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test14-上传文件名超过99个字符" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发123456789012345678901234567890100个字符.zip" elementType="HTTPFileArg">
+                <elementProp name="C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发123456789012345678901234567890100个字符.zip" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发123456789012345678901234567890100个字符.zip</stringProp>
+                  <stringProp name="File.path">C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\提升品型的权威机携手飒飒开展识传播1的1公益!合-展知识播公益展#识传播的公益展知发知识传播的公益展知识传播的公益展知发123456789012345678901234567890100个字符.zip</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -863,12 +893,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test15-组合勾选插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test15-组合勾选插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -918,12 +948,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test16-不勾选&quot;cve_lookup&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test16-不勾选&quot;cve_lookup&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -979,12 +1009,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test17-不勾选&quot;crypto_hints&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test17-不勾选&quot;crypto_hints&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1040,12 +1070,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test18-不勾选&quot;elf_analysis&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test18-不勾选&quot;elf_analysis&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1101,12 +1131,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test19-不勾选&quot;ip_and_uri_finder&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test19-不勾选&quot;ip_and_uri_finder&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1156,12 +1186,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test20-不勾选&quot;users_and_passwords&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test20-不勾选&quot;users_and_passwords&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1211,12 +1241,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test21-不勾选&quot;elf_checksec&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test21-不勾选&quot;elf_checksec&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1266,12 +1296,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test22-不勾选&quot;cwe_checker&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test22-不勾选&quot;cwe_checker&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1321,12 +1351,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test23-不勾选&quot;software_components&quot;插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test23-不勾选&quot;software_components&quot;插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1382,12 +1412,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test24-勾选不存在的插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test24-勾选不存在的插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1437,12 +1467,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test25-勾选重复的插件" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test25-勾选重复的插件" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\zsy.zip</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1492,12 +1522,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test26-创建不支持的固件任务" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test26-创建不支持的固件任务" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\测试.docx" elementType="HTTPFileArg">
+                <elementProp name="${firmware}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\测试.docx</stringProp>
+                  <stringProp name="File.path">${firmware}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1506,7 +1536,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="CheckOption" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">[&quot;crypto_hints&quot;]</stringProp>
+                  <stringProp name="Argument.value">[&quot;crypto_hints&quot;,&quot;cwe_checker&quot;]</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">CheckOption</stringProp>
@@ -1553,12 +1583,12 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test27-成功创建任务-任务名为单个特殊符号" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test27-成功创建任务-任务名为单个特殊符号" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\@" elementType="HTTPFileArg">
+                <elementProp name="C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\@" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/octet-stream</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\@</stringProp>
+                  <stringProp name="File.path">C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\@</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1608,12 +1638,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test27-成功创建任务-任务名为单个汉字" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test27-成功创建任务-任务名为单个汉字" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\好" elementType="HTTPFileArg">
+                <elementProp name="C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\好" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/x-executable</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\配额边界值测试固件\好</stringProp>
+                  <stringProp name="File.path">C:\Users\anban\Desktop\gujianhuizong\配额边界值测试固件\好</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1663,12 +1693,12 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test28-成功创建任务-任务包含cwe" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test28-成功创建任务-任务包含cwe" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\gujianhuizong\test\atmaserver" elementType="HTTPFileArg">
+                <elementProp name="${firmware_path}" elementType="HTTPFileArg">
                   <stringProp name="File.mimetype">application/x-executable</stringProp>
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\gujianhuizong\test\atmaserver</stringProp>
+                  <stringProp name="File.path">${firmware_path}</stringProp>
                   <stringProp name="File.paramname">File</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1738,7 +1768,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/BlackBoxTaskStart/${task_id_1}</stringProp>
+            <stringProp name="HTTPSampler.path">/BlackBoxTaskStart/${task_id_cwe}</stringProp>
             <stringProp name="HTTPSampler.method">PUT</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2153,7 +2183,7 @@
               </JSONPathAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="启动含cwe的固件任务" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="启动含cwe的固件任务" enabled="false">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
@@ -2276,7 +2306,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/BlackBoxTaskStart/${task_id_1}</stringProp>
+            <stringProp name="HTTPSampler.path">/BlackBoxTaskStart/${task_id_4}</stringProp>
             <stringProp name="HTTPSampler.method">PUT</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2306,7 +2336,7 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test05-启动任务失败-任务已结束" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test05-启动任务失败-任务已结束" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -2383,7 +2413,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="黑盒检测任务状态查询接口" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="黑盒检测任务状态查询接口" enabled="false">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -2396,7 +2426,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/BlackBoxTaskQuery/320</stringProp>
+            <stringProp name="HTTPSampler.path">/BlackBoxTaskQuery/10</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2626,6 +2656,111 @@
             <hashTree/>
           </hashTree>
         </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="事务控制器-创建uefi任务" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="成功创建任务-任务包含cwe" enabled="true">
+            <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+              <collectionProp name="HTTPFileArgs.files">
+                <elementProp name="C:\Users\anban\Desktop\gujianhuizong\uefi_changhong\python.exe" elementType="HTTPFileArg">
+                  <stringProp name="File.mimetype">application/x-executable</stringProp>
+                  <stringProp name="File.path">C:\Users\anban\Desktop\gujianhuizong\uefi_changhong\python.exe</stringProp>
+                  <stringProp name="File.paramname">File</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="CheckOption" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[&quot;software_components&quot;,&quot;cve_lookup&quot;,&quot;crypto_hints&quot;,&quot;elf_analysis&quot;,&quot;ip_and_uri_finder&quot;,&quot;users_and_passwords&quot;,&quot;elf_checksec&quot;,&quot;cwe_checker&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">CheckOption</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/BlackBoxTaskPush</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-code为200" enabled="true">
+              <stringProp name="JSON_PATH">$.code</stringProp>
+              <stringProp name="EXPECTED_VALUE">200</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-message为OK" enabled="true">
+              <stringProp name="JSON_PATH">$.message</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器-提取含cwe的任务id" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">task_id_cwe</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="成功启动任务" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/BlackBoxTaskStart/${task_id_cwe}</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-code为200" enabled="true">
+              <stringProp name="JSON_PATH">$.code</stringProp>
+              <stringProp name="EXPECTED_VALUE">200</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言-message为OK" enabled="true">
+              <stringProp name="JSON_PATH">$.message</stringProp>
+              <stringProp name="EXPECTED_VALUE">OK</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="查询二进制文件检测任务的审计结果" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
@@ -2639,7 +2774,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/BlackBoxTaskResult/320</stringProp>
+            <stringProp name="HTTPSampler.path">/BlackBoxTaskResult/5</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2821,7 +2956,7 @@
             </JSONPathAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test06-查看不支持固件的任务结果" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="test06-查看不支持固件的任务结果" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>

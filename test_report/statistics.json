@@ -1,0 +1,50 @@
+{
+  "登录" : {
+    "transaction" : "登录",
+    "sampleCount" : 250,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 1677.207999999999,
+    "medianResTime" : 1811.5,
+    "minResTime" : 459.0,
+    "maxResTime" : 2145.0,
+    "pct1ResTime" : 1999.8,
+    "pct2ResTime" : 2032.8,
+    "pct3ResTime" : 2108.3500000000004,
+    "throughput" : 25.206694898164955,
+    "receivedKBytesPerSec" : 15.070354248588426,
+    "sentKBytesPerSec" : 7.950939894636016
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 500,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 838.6719999999996,
+    "medianResTime" : 230.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 2145.0,
+    "pct1ResTime" : 1954.8000000000002,
+    "pct2ResTime" : 1999.9,
+    "pct3ResTime" : 2083.88,
+    "throughput" : 50.41338979632991,
+    "receivedKBytesPerSec" : 22.399003862925994,
+    "sentKBytesPerSec" : 7.950939894636016
+  },
+  "调试取样器" : {
+    "transaction" : "调试取样器",
+    "sampleCount" : 250,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 0.13600000000000004,
+    "medianResTime" : 0.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 1.0,
+    "pct1ResTime" : 1.0,
+    "pct2ResTime" : 1.0,
+    "pct3ResTime" : 1.0,
+    "throughput" : 26.652452025586353,
+    "receivedKBytesPerSec" : 7.748992204157782,
+    "sentKBytesPerSec" : 0.0
+  }
+}
